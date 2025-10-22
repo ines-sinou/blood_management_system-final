@@ -150,7 +150,7 @@
 
                 <p class="text-center mt-4">
                   Don't have an account?
-                  <a href="#" class="text-danger fw-bold">Register</a>
+                  <a href="{{ route('register') }}" class="text-danger fw-bold">Register</a>
                 </p>
               </div>
             </div>

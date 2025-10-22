@@ -138,7 +138,7 @@
 
             <!-- Already have an account -->
             <div class="text-center">
-              <small>Already have an account? <a href="#" class="text-danger">Login</a></small>
+              <small>Already have an account? <a href="{{ route('login') }}" class="text-danger">Login</a></small>
             </div>
           </div>
         </form>

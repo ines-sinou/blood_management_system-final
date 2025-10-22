@@ -69,6 +69,14 @@
       max-width: 100%;
       margin: 0 auto;
     }
+    .ines-btn-maroon{
+     background: #fff;
+      color: #800000;
+      border: none;
+      font-weight: 600;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
 
     #ines-drop {
       position: absolute;
@@ -195,6 +203,7 @@
           <li class="nav-item"><a href="#contact" class="nav-link"><i class="fas fa-phone me-2"></i>Contact</a></li>
         </ul>
       </div>
+        <a href="{{ route('login') }}" class="btn ines-btn-maroon">Login</a>
     </div>
   </nav>
 
@@ -205,7 +214,7 @@
         <div class="col-lg-6 ines-hero-text">
           <h1 class="fw-bold display-4 mb-3">Donate Blood, <br> Save a Life Today ❤️</h1>
           <p class="lead mb-4">HAIMA connects donors and hospitals in real-time — because every second counts when saving lives.</p>
-          <a href="#" class="btn btn-primary btn-lg px-4 shadow">
+          <a href="{{ route('register') }}" class="btn btn-primary btn-lg px-4 shadow">
             <i class="fas fa-hand-holding-heart me-2"></i> Get Started
           </a>
         </div>
@@ -243,11 +252,11 @@
           </div>
         </div>
       </div>
-        <h2 class="display-5">
+        <h2 class="display-5 mb-4">
             Be the Reason Someone Lives
         </h2>
         <p class="lead mb-4">Join Our Mission to make blood and its compnents accessible to every life in need</p>
-        <a href="" class="btn btn-light btn-lg">Become a Donor</a>
+        <a href="{{ route('register') }}" class="btn btn-light btn-lg">Become a Donor</a>
     </div>
     </div>
   </section>
