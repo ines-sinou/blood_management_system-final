@@ -2,6 +2,7 @@
 
 use App\Livewire\Settings\Profile;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -11,7 +12,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'landingpage')->name('home');
 Route::view('/login', 'Authcustom.login')->name('login');
-Route::view('/register', 'Authcustom.register')->name('register');
+Route::get('/register', [AuthController::class, 'showRegistrationForm'])->name('register');
+Route::post('/register', [AuthController::class, 'register']);
 Route::view('/dashboard', 'donor.dashboard')->name('dashboard');
 
 /*

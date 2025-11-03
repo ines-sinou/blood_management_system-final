@@ -49,28 +49,45 @@
 
     <div class="row justify-content-center">
       <div class="col-md-8 bg-white p-4 ines-card">
-        <form>
+        <form method="POST" action="{{ route('register') }}">
+            @csrf
+            
           <h2 class="text-center mb-4">Create Your Account - Save Lives</h2>
 
           <div class="row">
             <!-- Full Name -->
             <div class="col-md-6 mb-3">
               <label class="form-label"><i class="fas fa-user me-2"></i>Full Name<span class="text-danger">*</span></label>
-              <input type="text" class="form-control" placeholder="Sinou Ines" required>
+              <input type="text" class="form-control" name="name" placeholder="Sinou Ines" required>
+            </div>
+               <!-- Username -->
+            <div class="col-md-6 mb-3">
+              <label class="form-label"><i class="fas fa-user me-2"></i>Username<span class="text-danger">*</span></label>
+              <input type="text" class="form-control" name="username" placeholder="Ines123" required>
             </div>
 
             <!-- Email -->
             <div class="col-md-6 mb-3">
               <label class="form-label"><i class="fas fa-envelope me-2"></i>Email Address<span class="text-danger">*</span></label>
-              <input type="email" class="form-control" placeholder="name@example.com" required>
+              <input type="email" class="form-control" name="email" placeholder="name@example.com" required>
             </div>
 
             <!-- Password -->
             <div class="col-md-6 mb-3">
               <label class="form-label"><i class="fas fa-lock me-2"></i>Password<span class="text-danger">*</span></label>
               <div class="input-group">
-                <input type="password" class="form-control" id="ines-password" required>
-                <span class="input-group-text bg-light" id="ines-togglePassword" style="cursor: pointer;">
+                <input type="password" class="form-control" name="password" id="ines-password" required>
+                <span class="input-group-text bg-light" id="ines-togglePassword1" style="cursor: pointer;">
+                  <i class="fas fa-eye"></i>
+                </span>
+              </div>
+            </div>
+              <!-- Password -->
+            <div class="col-md-6 mb-3">
+              <label class="form-label"><i class="fas fa-lock me-2"></i>Confirm Password<span class="text-danger">*</span></label>
+              <div class="input-group">
+                <input type="password" class="form-control" name="confirm_password" id="ines-password" required>
+                <span class="input-group-text bg-light" id="ines-togglePassword2" style="cursor: pointer;">
                   <i class="fas fa-eye"></i>
                 </span>
               </div>
@@ -79,13 +96,13 @@
             <!-- Phone -->
             <div class="col-md-6 mb-3">
               <label class="form-label"><i class="fas fa-phone me-2"></i>Phone Number<span class="text-danger">*</span></label>
-              <input type="tel" class="form-control" placeholder="+237 6XX XX XX XX" required>
+              <input type="tel" class="form-control" name="phone" placeholder="+237 6XX XX XX XX" required>
             </div>
 
             <!-- Blood Type -->
             <div class="col-md-6 mb-3">
               <label class="form-label"><i class="fas fa-tint me-2"></i>Blood Type<span class="text-danger">*</span></label>
-              <select class="form-select" required>
+              <select class="form-select" name="blood_type" required>
                 <option selected disabled>Select</option>
                 <option>A+</option>
                 <option>A-</option>
@@ -120,13 +137,13 @@
             <!-- Location -->
             <div class="col-md-6 mb-3">
               <label class="form-label"><i class="fas fa-map-marker-alt me-2"></i>Location<span class="text-danger">*</span></label>
-              <input type="text" class="form-control" placeholder="City / Area" required>
+              <input type="text" class="form-control" name="location" placeholder="City / Area" required>
             </div>
 
             <!-- Last Donation -->
             <div class="col-12 mb-4">
               <label class="form-label"><i class="fas fa-calendar-day me-2"></i>Last Donation Day</label>
-              <input type="date" class="form-control">
+              <input type="date" class="form-control" name="last_donation">
             </div>
 
             <!-- Register Button -->
@@ -153,17 +170,32 @@
 
   <script>
     // Toggle password visibility
-    document.getElementById("ines-togglePassword").addEventListener("click", function () {
-      const password = document.getElementById("ines-password");
-      const icon = this.querySelector("i");
-      if (password.type === "password") {
-        password.type = "text";
-        icon.classList.replace("fa-eye", "fa-eye-slash");
-      } else {
-        password.type = "password";
-        icon.classList.replace("fa-eye-slash", "fa-eye");
-      }
-    });
+ const togglePassword = document.getElementById("ines-togglePassword1");
+const password = document.getElementById("ines-password");
+togglePassword.addEventListener("click", function () {
+  const icon = this.querySelector("i");
+  if (password.type === "password") {
+    password.type = "text";
+    icon.classList.replace("fa-eye", "fa-eye-slash");
+  } else {
+    password.type = "password";
+    icon.classList.replace("fa-eye-slash", "fa-eye");
+  }
+});
+
+const toggleConfirm = document.getElementById("ines-togglePassword2");
+const confirmPassword = document.getElementById("ines-confirm-password");
+toggleConfirm.addEventListener("click", function () {
+  const icon = this.querySelector("i");
+  if (confirmPassword.type === "password") {
+    confirmPassword.type = "text";
+    icon.classList.replace("fa-eye", "fa-eye-slash");
+  } else {
+    confirmPassword.type = "password";
+    icon.classList.replace("fa-eye-slash", "fa-eye");
+  }
+});
+
   </script>
 </body>
 </html>

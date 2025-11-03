@@ -115,7 +115,7 @@
                     <label class="form-label">
                       <i class="fas fa-envelope me-2"></i>Email Address <span class="text-danger">*</span>
                     </label>
-                    <input type="email" class="form-control" placeholder="name@example.com" required>
+                    <input type="email" class="form-control" placeholder="name@example.com" name="email" required>
                   </div>
 
                   <div class="mb-3">
@@ -123,7 +123,7 @@
                       <i class="fas fa-lock me-2"></i>Password <span class="text-danger">*</span>
                     </label>
                     <div class="input-group">
-                      <input type="password" id="ines-password" class="form-control" required>
+                      <input type="password" id="ines-password" class="form-control" name="password" required>
                       <span class="input-group-text bg-light" id="ines-togglePassword" style="cursor:pointer;">
                         <i class="fas fa-eye"></i>
                       </span>
