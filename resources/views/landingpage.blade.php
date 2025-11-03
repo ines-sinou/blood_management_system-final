@@ -93,7 +93,6 @@
       width: 100%;
       height: 460px;
       object-fit: contain;
-      border-radius: 20px;
       transition: opacity 1s ease-in-out, transform 1s ease-in-out;
       opacity: 0;
       transform: scale(0.95);

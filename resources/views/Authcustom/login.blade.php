@@ -17,29 +17,6 @@
       position: relative;
     }
 
-    /* Subtle falling blood drops */
-    .ines-blood-drop {
-      position: absolute;
-      top: -10px;
-      width: 10px;
-      height: 15px;
-      background: #b00020;
-      border-radius: 50% 50% 60% 60%;
-      opacity: 0.7;
-      animation: ines-fall 6s linear infinite;
-    }
-
-    @keyframes ines-fall {
-      0% {
-        transform: translateY(0);
-        opacity: 0.8;
-      }
-      100% {
-        transform: translateY(100vh);
-        opacity: 0;
-      }
-    }
-
     .ines-card {
       border-radius: 1rem;
       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
@@ -80,20 +57,9 @@
       color: #fff;
     }
 
-    @media (max-width: 768px) {
-      .ines-left-banner {
-        display: none;
-      }
-    }
   </style>
 </head>
 <body>
-  <!-- Falling drops -->
-  <div class="ines-blood-drop" style="left:10%; animation-delay: 0s;"></div>
-  <div class="ines-blood-drop" style="left:30%; animation-delay: 2s;"></div>
-  <div class="ines-blood-drop" style="left:60%; animation-delay: 1s;"></div>
-  <div class="ines-blood-drop" style="left:80%; animation-delay: 3s;"></div>
-
   <div class="container ines-login-section">
     <div class="row justify-content-center">
       <div class="col-lg-10">
